@@ -1,0 +1,293 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500&display=swap');
+
+:root {
+--gradient-value1-active-input-border: hsl(249, 99%, 64%);
+--gradient-value2-active-input-border: hsl(278, 94%, 30%);
+--Red-input-errors: hsl(0, 100%, 66%);
+
+/* ### Neutral */
+
+--White: hsl(0, 0%, 100%);
+--Light-grayish-violet: hsl(270, 3%, 87%);
+--Dark-grayish-violet: hsl(279, 6%, 55%);
+--Very-dark-violet: hsl(278, 68%, 11%);
+
+
+--Font-size-regular: 18px;
+--font-family-space-grotesk: 'Space Grotesk', sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: var(--font-family-space-grotesk);
+    font-weight: 500;
+}
+
+.attribution { font-size: 11px; text-align: center; position: fixed;bottom: 0;left: 30%;}
+.attribution a { color: hsl(19, 63%, 51%); }
+
+body {
+    height: 100vh;
+    min-width: 55rem;
+    background-image: url(./images/bg-main-desktop.png);
+    background-repeat: no-repeat;
+    background-size:30% 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+main {
+     height:25rem;
+     width: 50rem;
+     min-width: 50rem;
+    display: flex;
+}
+
+.debit-cards {
+    width: 25rem;
+    /* float: left; */
+   
+}
+    .card {
+        color: var(--White);
+        width: 20rem;
+        margin-block: 1.2rem;
+     
+    }
+    .debit-cards .card-front{
+        position: relative;
+    }
+
+    .debit-cards .card-front .card-front-text {
+        position: absolute;
+        top: 0;
+        left: 0;
+        padding: 1.5rem; 
+        width: 100%;
+        height: 100%;
+        }
+
+            .debit-cards .card-front .card-front-text img {
+                width: 3.5rem;
+                margin-bottom: 2.8rem;
+            }
+
+            .debit-cards .card-front .card-front-text p {
+                font-size: var(--Font-size-regular);
+                letter-spacing: 3px;
+                margin-bottom: 1rem;
+            }
+            .debit-cards .card-front .card-front-text #card-name {
+                letter-spacing: 2px;
+                text-transform: uppercase;
+                float: left;
+            }
+            .debit-cards .card-front .card-front-text #card-exp-date {
+                float: right;
+            }
+            
+span {
+    font-size: 10px;
+    font-weight: 400;
+}
+            
+    .debit-cards .card-back {
+        margin-left: 5rem;
+        position: relative; 
+    }   
+        .debit-cards .card-back .card-back-text{
+            position: absolute;
+            top: 4.6rem;
+            left: 16rem;
+        }
+
+
+.content-container {
+    width: 25rem;
+    padding: 4rem 4rem;
+    position: relative;
+}
+label {
+    display: block;
+    margin-bottom:5px ;
+    text-transform: uppercase;
+    font-size: 10px;
+    color: var(--Very-dark-violet);
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+input {
+    width: 100%;
+    padding: .4em;
+    border-radius: 5px;
+    border:1px solid lightgray;
+    /* margin-bottom: 10px; */
+}
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+   
+    opacity: 0.6; 
+    font-size: 14px;
+    font-weight: 400;
+}
+input:focus {
+    outline: none;
+    border:1px solid var(--Dark-grayish-violet);
+}
+.activeM .error-message {
+    display: block;
+}
+.error-message {
+    display: none;
+    color: var(--Red-input-errors);
+    font-size: 10px;
+    margin-top: 5px;
+}
+
+.content-container .form-container >div {
+    margin-block: 0.8rem;
+}
+ .exp-cvc {
+        display: inline-flex;
+        width: 100%;
+    }
+     .exp-cvc .exp-date-form{
+        margin-right: 1rem;
+    }
+
+    .exp-cvc .exp-date-form div{
+        display: inline-flex;
+
+    }
+     .exp-cvc .exp-date-form div input{
+        display: inline;
+        width: 3.5rem;
+        margin-right: .5rem;
+    }
+    .exp-cvc .cvc-form {
+        
+    }
+    .exp-cvc .cvc-form input{
+        width: 8rem;   
+    }
+  .confirm input {
+    background-color: var(--Very-dark-violet);
+    color: var(--White);
+    border: 0px;
+    padding: 0.7em;
+
+    cursor: pointer;
+  }
+
+.content-container.active .form-container{
+    display: none;
+
+}
+.content-container.active .thank-you-card{
+    display: flex;
+}
+.thank-you-card {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    gap:15px;
+}
+    .thank-you-card img{
+        width: 5em;
+    }
+    .thank-you-card .heading {
+        font-size: 24px;
+        color: var(--Very-dark-violet);
+        letter-spacing: 1px;
+
+    }
+    .thank-you-card .desc {
+        color: var(--Dark-grayish-violet);
+        font-size: small;
+    }
+    .thank-you-card .continue-btn {
+        background-color: var(--Very-dark-violet);
+        color: var(--White);
+        border: 0px;
+        padding: 0.7em;
+        cursor: pointer;
+        width: 100%;
+        border-radius: 5px;
+        margin-top: 15px;
+    }
+    @media screen and (max-width:450px) {
+        
+        body{
+            height: fit-content;
+            min-width: 100px;
+            background-image: url(./images/bg-main-mobile.png);
+            background-size: 100% 12rem;
+            display: block;
+           position: relative;
+        }
+
+        main{
+            flex-direction: column;
+            width: 100%;
+            height: fit-content;
+            min-width: 300px;
+        }
+        .debit-cards{
+            width: 100%;
+            display: flex;
+            flex-direction: column-reverse;
+
+            height: 16rem
+        }
+
+            .card{
+                width: 16rem;
+                margin:0;
+            }
+
+            .debit-cards .card-front {
+                position: absolute;
+                /* top: 8.4rem; */
+                z-index: 1;
+                margin-left: 5%;
+            }
+            .debit-cards .card-back {
+                margin-left: 20%;
+                margin-bottom: 5rem;
+                position: absolute;
+                
+            }
+
+                .debit-cards .card-front .card-front-text{
+                    padding: 1rem;
+                }
+                    .debit-cards .card-front .card-front-text img{
+                        width: 3rem;
+                        margin-bottom: 1.8rem;
+                    }
+                    .debit-cards .card-front .card-front-text p{
+                        font-size: 10;
+                        letter-spacing: 1px;
+                    }
+                .debit-cards .card-back .card-back-text{
+                    left: 13rem;
+                    top: 3.5rem;
+                }
+        .content-container {
+            width: 100%;
+            padding: 1rem;
+            margin-bottom: 2rem;
+        }
+        input {
+            padding: .6rem;
+        }
+        .attribution {
+            display: block;
+            position: relative;
+            left: 10px;
+            bottom: 10px;
+        }
+    }
